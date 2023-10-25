@@ -1,21 +1,35 @@
-import ilustration from '../../assets/Login.png';
+import { Link } from "react-router-dom";
+import { Button } from "../components/Button";
+import { Input } from "../components/Input";
+import { InputPassword } from "../components/InputPassword";
 
 export function AuthLayout() {
   return (
-    <div className="flex w-full h-full">
+    <div className="flex justify-center items-center flex-col h-full md:w-[400px] sm:w-full mx-auto px-3">
 
-      <div className="w-1/2 h-full"></div>
-
-      <div className="w-1/2 h-full p-8 flex justify-center items-center">
-        <img
-          src={ilustration}
-          alt="ilustration"
-          className="object-cover w-full h-full max-w-[656px] max-h-[960px] select-none rounded-[32px]"
-        />
-        <div className="max-w-[656px] bg-white p-10 absolute bottom-8 rounded-b-[32px]">
-          <p>Gerencie suas finanças pessoais de uma forma simples com o fincheck, e o melhor, totalmente de graça!</p>
-        </div>
+      <div>
+        <h1 className="text-2xl font-semibold">Entre com seu login</h1>
       </div>
+
+      <form className="flex gap-4 flex-col mt-5 w-full">
+        <Input
+          placeholder="E-mail"
+          name="email"
+        />
+
+        <InputPassword
+          placeholder="Senha"
+          name="password"
+          type="password"
+        />
+
+        <Button>
+          <Link to="/dashboard">
+            Entrar
+          </Link>
+        </Button>
+      </form>
+
 
     </div>
   )
